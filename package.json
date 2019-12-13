@@ -1,0 +1,77 @@
+{
+  "name": "jest-url-loader",
+  "version": "0.1.0",
+  "description": "Similar with webpack's url-loader for Jest.",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf -rf lib",
+    "lint": "eslint src/**/*.ts __tests__/**/*.ts",
+    "lint-staged": "lint-staged",
+    "test": "jest",
+    "ci": "npm run lint && npm run test && lint-md .",
+    "start": "tsc -w",
+    "build": "rimraf ./lib && tsc --module commonjs --outDir lib",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "mime": "^2.4.4"
+  },
+  "peerDependencies": {},
+  "keywords": [
+    "jest-transformer",
+    "url-loader",
+    "image",
+    "svg",
+    "png",
+    "jpg"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.17",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "jest-electron": "^0.1.7",
+    "lint-md-cli": "^0.1.1",
+    "lint-staged": "^9.3.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  },
+  "jest": {
+    "runner": "jest-electron/runner",
+    "testEnvironment": "jest-electron/environment",
+    "preset": "ts-jest",
+    "collectCoverage": true,
+    "testRegex": "(/__tests__/.*\\.(test|spec))\\.ts$",
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "moduleFileExtensions": ["ts", "svg", "js"],
+    "transform": {
+      "\\.(jpg|jpeg|png|gif|svg)$": "./lib/index.js"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
