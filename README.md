@@ -25,7 +25,7 @@ Update your jest configure, and add it into transform.
 
 ```diff
 +    "transform": {
-+      "\\.(jpg|jpeg|png|gif|svg)$": "jest-url-lader"
++      "\\.(jpg|jpeg|png|gif|svg)$": "jest-url-loader"
 +    },
 ```
 
