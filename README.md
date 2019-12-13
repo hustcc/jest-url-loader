@@ -5,7 +5,6 @@
 
 [![npm Version](https://img.shields.io/npm/v/jest-url-loader.svg)](https://www.npmjs.com/package/jest-url-loader)
 [![Build Status](https://github.com/hustcc/jest-url-loader/workflows/build/badge.svg)](https://github.com/hustcc/jest-url-loader/actions)
-[![Coverage Status](https://coveralls.io/repos/github/hustcc/jest-url-loader/badge.svg)](https://coveralls.io/github/hustcc/jest-url-loader)
 [![npm License](https://img.shields.io/npm/l/jest-url-loader.svg)](https://www.npmjs.com/package/jest-url-loader)
 
 
