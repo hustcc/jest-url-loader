@@ -7,6 +7,10 @@
   "files": [
     "lib"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hustcc/jest-url-loader.git"
+  },
   "scripts": {
     "clean": "rimraf -rf lib",
     "lint": "eslint src/**/*.ts __tests__/**/*.ts",
